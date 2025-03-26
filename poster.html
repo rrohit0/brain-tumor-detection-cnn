@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detector Poster</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .poster {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background-shape {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(41, 128, 185, 0.05), rgba(41, 128, 185, 0.15));
+            border-radius: 50%;
+            width: 80mm;
+            height: 80mm;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            top: -20mm;
+            right: -20mm;
+        }
+        
+        .shape-2 {
+            bottom: -30mm;
+            left: -30mm;
+            width: 120mm;
+            height: 120mm;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10mm;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            color: white;
+            width: 25mm;
+            height: 25mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10mm;
+            font-size: 16pt;
+        }
+        
+        .title {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 28pt;
+            margin: 0;
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin-top: 2mm;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .content {
+            display: flex;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .left-column {
+            flex: 1;
+            padding-right: 7mm;
+        }
+        
+        .right-column {
+            flex: 1;
+            padding-left: 7mm;
+            border-left: 1px solid #e0e0e0;
+        }
+        
+        h2 {
+            font-size: 16pt;
+            color: #2980b9;
+            margin-top: 0;
+            margin-bottom: 5mm;
+            padding-bottom: 2mm;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        p {
+            font-size: 10pt;
+            line-height: 1.5;
+            margin-bottom: 5mm;
+            text-align: justify;
+        }
+        
+        .workflow {
+            margin-top: 8mm;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 5mm;
+            align-items: center;
+        }
+        
+        .step-number {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            color: white;
+            width: 8mm;
+            height: 8mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 3mm;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            font-size: 11pt;
+            margin-bottom: 1mm;
+        }
+        
+        .step-description {
+            font-size: 9pt;
+            color: #666;
+            margin: 0;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5mm;
+        }
+        
+        .feature {
+            flex: 0 0 calc(50% - 2mm);
+            margin-bottom: 4mm;
+            background-color: #f8f9fa;
+            border-radius: 3mm;
+            padding: 3mm;
+            box-sizing: border-box;
+        }
+        
+        .feature:nth-child(odd) {
+            margin-right: 2mm;
+        }
+        
+        .feature:nth-child(even) {
+            margin-left: 2mm;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 10pt;
+            margin-bottom: 1mm;
+            color: #2980b9;
+        }
+        
+        .feature-description {
+            font-size: 9pt;
+            margin: 0;
+        }
+        
+        .accuracy {
+            margin-top: 10mm;
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            color: white;
+            padding: 5mm;
+            border-radius: 3mm;
+        }
+        
+        .accuracy h3 {
+            margin-top: 0;
+            font-size: 14pt;
+            margin-bottom: 3mm;
+        }
+        
+        .accuracy p {
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            margin-top: 10mm;
+            text-align: center;
+            color: #666;
+            font-size: 9pt;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media print {
+            body {
+                background: none;
+            }
+            
+            .poster {
+                box-shadow: none;
+                margin: 0;
+                padding: 10mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="background-shape shape-1"></div>
+        <div class="background-shape shape-2"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.2 8.4c.5.4.8.9.8 1.6s-.3 1.2-.8 1.6"></path>
+                    <path d="M3.2 8.4c-.5.4-.8.9-.8 1.6s.3 1.2.8 1.6"></path>
+                    <path d="M10.6 13a2 2 0 1 1-4.2 0V3a2 2 0 1 0 4.2 0"></path>
+                    <path d="M17.6 13a2 2 0 1 0 4.2 0V3a2 2 0 1 1-4.2 0"></path>
+                    <path d="M21 16v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-2"></path>
+                    <path d="M12 4h.01"></path>
+                    <path d="M12 8h.01"></path>
+                    <path d="M12 12h.01"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
+            </div>
+            <div class="title">
+                <h1>Brain Tumor Detection</h1>
+                <div class="subtitle">AI-Powered MRI Analysis for Early Diagnosis</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="left-column">
+                <h2>Introduction</h2>
+                <p>Brain tumors represent one of the most challenging conditions to diagnose and treat in modern medicine. Early detection is crucial for improving patient outcomes and survival rates. Our Brain Tumor Detection system leverages advanced artificial intelligence and deep learning to analyze Magnetic Resonance Imaging (MRI) scans, providing healthcare professionals with a powerful tool for early and accurate diagnosis.</p>
+                
+                <p>This system utilizes Convolutional Neural Networks (CNNs) to identify patterns in brain MRI scans that may indicate the presence of tumors. By processing these complex medical images, our technology can highlight abnormalities that might be missed during conventional analysis, serving as a valuable second opinion for radiologists and neurologists.</p>
+                
+                <div class="workflow">
+                    <h2>How It Works</h2>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Image Upload</div>
+                            <div class="step-description">Healthcare professionals upload brain MRI scans through our secure web interface. The system accepts standard medical imaging formats and ensures patient data privacy.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Image Preprocessing</div>
+                            <div class="step-description">The system automatically normalizes, resizes, and enhances the MRI scan to optimize it for analysis. This step ensures consistent quality across different scanning equipment and protocols.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">AI Analysis</div>
+                            <div class="step-description">Our trained Convolutional Neural Network analyzes the processed images to detect abnormal tissue patterns and structures indicative of brain tumors.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Result Generation</div>
+                            <div class="step-description">The system provides a comprehensive report that includes tumor detection results, confidence levels, and visual highlights of potential tumor regions.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <h2>Technical Approach</h2>
+                <p>Our Brain Tumor Detection system employs a sophisticated deep learning architecture specifically designed for medical image analysis. The heart of our technology is a specialized Convolutional Neural Network (CNN) trained on thousands of annotated brain MRI scans from diverse patient populations.</p>
+                
+                <p>The CNN model processes MRI data through multiple specialized layers that extract increasingly complex features from the images. Early layers identify basic structures and patterns, while deeper layers recognize higher-level features associated with abnormal tissue growth and tumor characteristics.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Image Segmentation</div>
+                        <div class="feature-description">Precisely identifies and outlines tumor regions, distinguishing them from healthy brain tissue.</div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-title">Custom Dataset Training</div>
+                        <div class="feature-description">Allows institutions to upload their own labeled datasets to improve accuracy for their specific patient demographics.</div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-title">Multi-Angle Analysis</div>
+                        <div class="feature-description">Processes axial, coronal, and sagittal views for comprehensive 3D assessment of brain structures.</div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-title">Explainable AI</div>
+                        <div class="feature-description">Highlights regions of interest in heat maps to help doctors understand the AI's decision-making process.</div>
+                    </div>
+                </div>
+                
+                <div class="accuracy">
+                    <h3>Accuracy & Performance</h3>
+                    <p>Our model achieves over 95% accuracy in distinguishing between tumor and non-tumor cases in validated testing datasets. The system processes each scan in under 10 seconds, providing near-instantaneous feedback to healthcare providers.</p>
+                </div>
+                
+                <h2>Clinical Benefits</h2>
+                <p>The Brain Tumor Detection system serves as a powerful decision support tool for medical professionals, enhancing diagnostic capabilities and improving patient care. By providing quick and accurate preliminary analysis, the system helps reduce diagnostic time, prioritize urgent cases, and support early intervention strategies.</p>
+                
+                <p>Furthermore, our system offers standardized analysis across different healthcare settings, reducing variability in diagnostic quality and helping institutions without specialized neuroradiology expertise. The intuitive interface and clear reporting make integration into existing clinical workflows seamless.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Brain Tumor Detection Project • A deep learning approach to medical image analysis
+        </div>
+    </div>
+</body>
+</html>
