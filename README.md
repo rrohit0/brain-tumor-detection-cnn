@@ -89,3 +89,6 @@ The project includes an A4-sized informational poster (poster.html) that can be:
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Contact
+For any queries, reach out at rcrathod13@gmail.com or open an issue on GitHub!
